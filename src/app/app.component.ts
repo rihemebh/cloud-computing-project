@@ -12,7 +12,11 @@ export class AppComponent {
   message = '';
 
   constructor(private http: HttpClient) {
-    this.http.get('/api/getName')
-      .subscribe((resp: any) => this.message = resp);
+    this.http.get('api/getName')
+      .subscribe((resp: any) => this.message = resp.body);
+
+      
+  console.log(this.message);
   }
+
 }
